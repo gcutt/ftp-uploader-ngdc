@@ -31,8 +31,8 @@ def uploadfile(local_path, folder_name):
                 return f"✅ Uploaded {filename} to {folder_name} successfully"
 
     except Exception as e:
-        print(f"❌ FTP upload failed: {e}")
-        return f"❌ Upload failed: {e}"
+        print(f"❌ FTP upload failed: \n{e}")
+        return f"❌ Upload failed: \n{e}"
     
 def uploadfiles(local_paths, folder_name):
     target_dir = f"/pub/incoming/{folder_name}"
@@ -59,11 +59,11 @@ def uploadfiles(local_paths, folder_name):
                         print(f"🚀 Uploaded {filename}")
                         results.append(f"✅ {filename}")
                 except Exception as e:
-                    print(f"❌ Failed to upload {filename}: {e}")
-                    results.append(f"❌ {filename}: {e}")
+                    print(f"❌ Failed to upload {filename}: \n{e}")
+                    results.append(f"❌ {filename}: \n{e}")
 
         return "\n".join(results)
 
     except Exception as e:
-        print(f"❌ FTP session failed: {e}")
-        return f"❌ FTP session failed: {e}"    
+        print(f"❌ FTP session failed: \n{e}")
+        return f"❌ FTP session failed: \n{e}"    
